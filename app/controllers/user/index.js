@@ -1,6 +1,8 @@
 const graphqlHTTP = require('express-graphql')
 const schema = require('./schema')
 
+const users = require('./mock')
+
 class User {
   constructor(app) {
     this.app = app
@@ -10,7 +12,15 @@ class User {
 
   root() {
     return ({
-      rename: ({ lastname, surname }) => `${lastname} ${surname}`
+      show: ({ id }) => users[id],
+      delete: ({ id }) => {
+        delete users[id]
+
+        return `sucess`
+      },
+      all: () => {
+        return Object.entries(users).map(user => user[1])
+      }
     })
   }
 
