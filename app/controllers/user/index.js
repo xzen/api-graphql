@@ -1,6 +1,6 @@
 const graphqlHTTP = require('express-graphql')
-const schema = require('./schema')
 
+const schema = require('./schema')
 const users = require('./mock')
 
 class User {
@@ -10,6 +10,10 @@ class User {
     this.run()
   }
 
+  /**
+   * GraphQL root
+   * @return {function} root
+   */
   root() {
     return ({
       show: ({ id }) => users[id],
@@ -18,9 +22,7 @@ class User {
 
         return `sucess`
       },
-      all: () => {
-        return Object.entries(users).map(user => user[1])
-      }
+      all: () => Object.entries(users).map(user => user[1])
     })
   }
 
