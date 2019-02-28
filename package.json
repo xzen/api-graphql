@@ -5,6 +5,9 @@
   "repository": "https://github.com/xzen/api-graphql.git",
   "author": "cvimard <cvimard@socialobjects.co>",
   "license": "MIT",
+  "scripts": {
+    "start": "node index.js"
+  },
   "dependencies": {
     "@std/esm": "^0.26.0",
     "eslint": "^5.14.1",

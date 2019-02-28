@@ -1,0 +1,10 @@
+{
+  "apps": [{
+    "name": "api-graphql",
+    "script": "./index.js",
+    "args": ["production"],
+    "exec_mode": "cluster",
+    "instances": 4,
+    "watch": "../"
+  }]
+}

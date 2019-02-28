@@ -2,7 +2,7 @@ const { buildSchema } = require('graphql');
 
 module.exports = buildSchema(`
   type User {
-    id: String
+    id: String!
     name: String
     age: Int
   }
