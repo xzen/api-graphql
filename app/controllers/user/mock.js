@@ -13,5 +13,10 @@ module.exports = {
     id: 'c',
     name: 'cyril',
     age: 31
+  },
+  d: {
+    id: 'd',
+    name: 'david',
+    age: 24
   }
 }
